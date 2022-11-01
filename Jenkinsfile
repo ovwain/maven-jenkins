@@ -40,6 +40,7 @@ pipeline {
           steps 
           { 
               input('Continue to Deploy?') 
+              echo 'Manager Approved :)'
               echo 'Deploying to Production Environment' 
           } 
       }
