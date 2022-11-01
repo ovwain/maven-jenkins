@@ -23,6 +23,22 @@ pipeline {
                 -Dsonar.login=sqp_128bf691b445067b1181077aedb26dea16b4d58d"
             }  
        }
+      stage('Sonarqube Analysis - SAST')  
+      { 
+        steps  
+        { 
+          withSonarQubeEnv('SonarQube')  
+            { 
+              sh "mvn sonar:sonar -Dsonar.projectKey=maven-jenkins-pipeline -Dsonar.host.url=http://34.89.112.204:9000/" 
+            
+            }
+          timeout(time: 2, unit: 'MINUTES') {
+            script {
+              waitForQualityGate abortPipeline: true
+            }
+          }
+        } 
+      } 
       stage('Test Maven - JUnit') 
       {
             steps 
