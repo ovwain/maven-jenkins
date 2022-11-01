@@ -18,7 +18,7 @@ pipeline {
             steps 
             {
               sh "mvn clean verify sonar:sonar \
-                -Dsonar.projectKey=maven-jenkins-pipeline \
+                -Dsonar.projectKey=maven-pipeline \
                 -Dsonar.host.url=http://34.89.112.204:9000 \
                 -Dsonar.login=sqp_c3b1161dc852e670b9eb710af698aa18971a474d"
             }  
