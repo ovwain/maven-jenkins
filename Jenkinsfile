@@ -51,5 +51,13 @@ pipeline {
               echo 'Deploying to Production Environment' 
           } 
       }
+      stage('Deploy')
+      {
+          steps
+          {
+               input('Continue to Deploy?')
+               echo 'Deploying to Production Environment'
+          }
+      }
     }
 }
