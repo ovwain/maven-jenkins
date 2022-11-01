@@ -17,10 +17,10 @@ pipeline {
       {
             steps 
             {
-              sh "mvn clean verify sonar:sonar" 
-              sh "Dsonar.projectKey=maven-jenkins-pipeline" \
-              sh "Dsonar.host.url=http://34.89.112.204:9000" \
-              sh "Dsonar.login=sqp_128bf691b445067b1181077aedb26dea16b4d58d"
+              sh "mvn clean verify sonar:sonar \
+                -Dsonar.projectKey=maven-jenkins-pipeline \
+                -Dsonar.host.url=http://34.89.112.204:9000 \
+                -Dsonar.login=sqp_128bf691b445067b1181077aedb26dea16b4d58d"
             }  
        }
       stage('Test Maven - JUnit') 
