@@ -19,7 +19,7 @@ pipeline {
             {
               sh "mvn clean verify sonar:sonar \
                 -Dsonar.projectKey=maven-pipeline \
-                -Dsonar.host.url=http://34.89.112.204:9000 \
+                -Dsonar.host.url=http://34.89.73.50:9000 \
                 -Dsonar.login=sqp_c3b1161dc852e670b9eb710af698aa18971a474d"
             }  
        }
@@ -29,7 +29,7 @@ pipeline {
         { 
           withSonarQubeEnv('SonarQube')  
             { 
-              sh "mvn sonar:sonar -Dsonar.projectKey=maven-jenkins-pipeline -Dsonar.host.url=http://34.89.112.204:9000/" 
+              sh "mvn sonar:sonar -Dsonar.projectKey=maven-jenkins-pipeline -Dsonar.host.url=http://34.89.73.50:9000/" 
             
             }
           timeout(time: 2, unit: 'MINUTES') {
